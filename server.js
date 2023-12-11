@@ -1,10 +1,18 @@
 const express = require("express");
-const axios = require("axios");
 const redis = require("redis");
+const { Pool } = require("pg");
 const now = require("performance-now");
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+const pgPool = new Pool({
+  user: "postgres",
+  host: "localhost",
+  database: "postgres",
+  password: "mysecretpassword",
+  port: 5432,
+});
 
 let redisClient;
 
@@ -16,25 +24,23 @@ let redisClient;
   await redisClient.connect();
 })();
 
-async function fetchApiData(species) {
+async function fetchDbData(id) {
   const start = now();
-  const apiResponse = await axios.get(
-    `https://www.fishwatch.gov/api/species/${species}`
-  );
+  const { rows } = await pgPool.query("SELECT * FROM alunos WHERE id = $1", [id]);
   const end = now();
-  console.log(`API request took ${(end - start).toFixed(2)} milliseconds`);
-  return apiResponse.data;
+  console.log(`DB query took ${(end - start).toFixed(2)} milliseconds`);
+  return rows[0];
 }
 
 async function cacheData(req, res, next) {
-  const species = req.params.species;
+  const alunoId = req.params.id;
   let results;
   try {
     const start = now();
-    const cacheResults = await redisClient.get(species);
+    const cacheResults = await redisClient.get(alunoId);
     const end = now();
     console.log(`Cache read took ${(end - start).toFixed(2)} milliseconds`);
-    
+
     if (cacheResults) {
       results = JSON.parse(cacheResults);
       res.send({
@@ -46,19 +52,19 @@ async function cacheData(req, res, next) {
     }
   } catch (error) {
     console.error(error);
-    res.status(404);
+    res.status(500).send("Internal Server Error");
   }
 }
 
-async function getSpeciesData(req, res) {
-  const species = req.params.species;
+async function getAlunoData(req, res) {
+  const alunoId = req.params.id;
   let results;
 
   try {
-    const apiData = await fetchApiData(species);
+    const dbData = await fetchDbData(alunoId);
 
     const start = now();
-    await redisClient.set(species, JSON.stringify(apiData), {
+    await redisClient.set(alunoId, JSON.stringify(dbData), {
       EX: 180,
       NX: true,
     });
@@ -67,15 +73,15 @@ async function getSpeciesData(req, res) {
 
     res.send({
       fromCache: false,
-      data: apiData,
+      data: dbData,
     });
   } catch (error) {
     console.error(error);
-    res.status(404).send("Data unavailable");
+    res.status(500).send("Internal Server Error");
   }
 }
 
-app.get("/fish/:species", cacheData, getSpeciesData);
+app.get("/aluno/:id", cacheData, getAlunoData);
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
