@@ -1,0 +1,5 @@
+# Arquivos temporários
+.DS_Store
+
+# Pasta node_modules
+/node_modules/
