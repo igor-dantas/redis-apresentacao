@@ -1,8 +1,8 @@
 **README.md**
 
-# Node.js API com Cache e PostgreSQL
+# Node.js API com Cache, PostgreSQL e Redis
 
-Este é um exemplo simples de uma API Node.js que utiliza Redis para caching e PostgreSQL para armazenar dados de alunos. A aplicação inclui uma rota para obter informações sobre um aluno, com suporte a caching para melhorar o desempenho.
+Este é um exemplo simples de uma API Node.js que utiliza Redis para caching, PostgreSQL para armazenar dados de alunos e Traefik para orquestrar serviços em contêineres Docker. A aplicação inclui uma rota para obter informações sobre um aluno, com suporte a caching para melhorar o desempenho.
 
 ## Pré-requisitos
 
@@ -14,7 +14,9 @@ Certifique-se de ter o seguinte instalado em sua máquina:
 
 ## Configuração do Banco de Dados
 
-Antes de executar a aplicação, você precisará configurar o PostgreSQL. Se você já tem um PostgreSQL em execução ou deseja usar uma instância existente, pode pular esta etapa.
+Antes de executar a aplicação, você precisará configurar o PostgreSQL e o Redis. Se você já tem instâncias em execução ou deseja usar instâncias existentes, pode pular estas etapas.
+
+### PostgreSQL
 
 Se você não tiver o PostgreSQL, você pode usar o Docker Compose para configurar um contêiner:
 
@@ -37,6 +39,32 @@ docker run -it --rm \
 ```
 
 Substitua `seu_usuario` e `seu_banco_de_dados` pelos valores adequados.
+
+### Redis
+
+Para instalar o Redis, execute os seguintes comandos:
+
+```bash
+curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+sudo chmod 644 /usr/share/keyrings/redis-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+sudo apt-get update
+sudo apt-get install redis-stack-server
+```
+
+**Verificar Versão Instalada**
+
+```bash
+redis-server --version
+redis-cli --version
+```
+
+**Testar Conectividade**
+
+```bash
+redis-cli
+127.0.0.1:6379> ping
+```
 
 ## Instalação de Dependências
 
