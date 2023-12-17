@@ -2,7 +2,7 @@
 
 # Node.js API com Cache, PostgreSQL e Redis
 
-Este é um exemplo simples de uma API Node.js que utiliza Redis para caching, PostgreSQL para armazenar dados de alunos e Traefik para orquestrar serviços em contêineres Docker. A aplicação inclui uma rota para obter informações sobre um aluno, com suporte a caching para melhorar o desempenho.
+Este é um exemplo simples de uma API Node.js que utiliza Redis para caching, PostgreSQL para armazenar dados de alunos e Docker compose para orquestrar serviços em contêineres Docker. A aplicação inclui uma rota para obter informações sobre um aluno, com suporte a caching para melhorar o desempenho.
 
 ## Pré-requisitos
 
