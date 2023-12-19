@@ -70,6 +70,15 @@ Certifique-se de substituir `1` pelo ID do aluno desejado.
 
 Lembre-se de que esta é uma aplicação de exemplo, e você pode adaptá-la conforme necessário para atender aos requisitos específicos do seu projeto.
 
+## Redis stack
+
+Para uma experiência visual, utilize o redis stack
+
+Utilize este endereço para ter acesso ao ambiente visual:
+```bash
+localhost:8001
+```
+
 ## Aplicações utilizadas
 
 ![Node.js Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/128px-Node.js_logo.svg.png)
