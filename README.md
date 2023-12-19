@@ -49,7 +49,7 @@ npm install
 Para iniciar a aplicação, execute o seguinte comando:
 
 ```bash
-npm start
+node server.js
 ```
 
 A aplicação será iniciada na porta padrão `3000`. Você verá a mensagem `App listening on port 3000` indicando que a aplicação está em execução.
