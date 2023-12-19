@@ -74,7 +74,7 @@ Lembre-se de que esta é uma aplicação de exemplo, e você pode adaptá-la con
 
 ![Node.js Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/128px-Node.js_logo.svg.png)
 
-![Redis logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Dredis&psig=AOvVaw3tez20B_fb7YjzZzDfRAuq&ust=1703036027457000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCICOtt2tmoMDFQAAAAAdAAAAABAE)
+![Redis logo](https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/128px-Redis_Logo.svg.png)
 
 ![Postgres logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3DpostgreSQL&psig=AOvVaw2royIc-hWN2KeINh8rVojZ&ust=1703036118639000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCKCWwqGumoMDFQAAAAAdAAAAABAE)
 
