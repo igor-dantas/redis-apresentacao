@@ -31,7 +31,7 @@ Isso iniciará um contêiner PostgreSQL com as configurações especificadas no 
 Para popular o PostgreSQL local com o arquivo `alunos.sql`, você pode usar o Docker. Execute o seguinte comando no terminal:
 
 ```bash
- docker exec -i postgres-container  psql -U postgres -d postgpostgres_databaseres  < alunos.sql                                                                                                    ()
+ docker exec -i postgres-container  psql -U postgres -d postgres_databaseres  < alunos.sql                                                                                                    ()
 ```
 
 Substitua `seu_usuario` e `seu_banco_de_dados` pelos valores adequados.
@@ -69,3 +69,13 @@ curl http://localhost:3000/aluno/1
 Certifique-se de substituir `1` pelo ID do aluno desejado.
 
 Lembre-se de que esta é uma aplicação de exemplo, e você pode adaptá-la conforme necessário para atender aos requisitos específicos do seu projeto.
+
+## Aplicações utilizadas
+
+![Node.js Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/128px-Node.js_logo.svg.png)
+
+![Redis logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Dredis&psig=AOvVaw3tez20B_fb7YjzZzDfRAuq&ust=1703036027457000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCICOtt2tmoMDFQAAAAAdAAAAABAE)
+
+![Postgres logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3DpostgreSQL&psig=AOvVaw2royIc-hWN2KeINh8rVojZ&ust=1703036118639000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCKCWwqGumoMDFQAAAAAdAAAAABAE)
+
+![Docker compose logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.kubesimplify.com%2Feverything-you-need-to-know-about-docker-compose&psig=AOvVaw3qsJQiragC1ugOvFb0pSXL&ust=1703036212452000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPjq-bWumoMDFQAAAAAdAAAAABAE)
