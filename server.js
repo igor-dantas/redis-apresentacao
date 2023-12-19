@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const pgPool = new Pool({
   user: "postgres",
   host: "localhost",
-  database: "postgres",
+  database: "postgres_database",
   password: "mysecretpassword",
   port: 5432,
 });
