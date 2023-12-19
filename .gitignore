@@ -2,7 +2,3 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-
-# Ignore the package-lock.json and yarn.lock files
-package-lock.json
-yarn.lock
