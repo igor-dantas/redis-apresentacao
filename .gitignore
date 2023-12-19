@@ -1,5 +1,8 @@
-# Arquivos temporários
-.DS_Store
+# Ignore Node.js build artifacts and dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
 
-# Pasta node_modules
-/node_modules/
+# Ignore the package-lock.json and yarn.lock files
+package-lock.json
+yarn.lock
