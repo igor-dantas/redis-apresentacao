@@ -76,6 +76,6 @@ Lembre-se de que esta é uma aplicação de exemplo, e você pode adaptá-la con
 
 ![Redis logo](https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/128px-Redis_Logo.svg.png)
 
-![Postgres logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3DpostgreSQL&psig=AOvVaw2royIc-hWN2KeINh8rVojZ&ust=1703036118639000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCKCWwqGumoMDFQAAAAAdAAAAABAE)
+![Postgres logo](https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg)
 
-![Docker compose logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.kubesimplify.com%2Feverything-you-need-to-know-about-docker-compose&psig=AOvVaw3qsJQiragC1ugOvFb0pSXL&ust=1703036212452000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPjq-bWumoMDFQAAAAAdAAAAABAE)
+![Docker compose logo](https://openwhisk.apache.org/images/deployments/logo-docker-compose-text.svg)
