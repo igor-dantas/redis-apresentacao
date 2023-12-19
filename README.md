@@ -31,7 +31,7 @@ Isso iniciará um contêiner PostgreSQL com as configurações especificadas no 
 Para popular o PostgreSQL local com o arquivo `alunos.sql`, você pode usar o Docker. Execute o seguinte comando no terminal:
 
 ```bash
- docker exec -i postgres-container  psql -U postgres -d postgres_database  < alunos.sql
+ docker exec -i postgres-container  psql -U postgres -d postgres_database < alunos.sql
 ```
 
 Substitua `seu_usuario` e `seu_banco_de_dados` pelos valores adequados.
